@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+    <head>
+        
+    </head>
+    <body>
+       
+		<input type="number" name="angka" id="angka" placeholder="Input Angka">
+		<br> <br> <br>
+		<button onclick="generateSegitiga()">Generate Segitiga</button>
+		<button onclick="generateGanjil()">Generate Bilangan Ganjil</button>
+		<button onclick="generatePrima()">Generate Bilangan Prima </button>
+		<br>
+		<p id="hasil"></p>
+        <script>
+			function generateSegitiga(){
+				let angka = document.getElementById("angka").value
+				for(i=0;i<=angka.length;i++){
+					for(j=angka.length;j>0;j--){
+						temp += angka + "<br>";
+						
+					}
+				}
+				hasil.innerHTML=temp;
+			}function generateGanjil(){
+				let angka = Number(document.getElementById("angka").value);
+				let hasil = document.getElementById("hasil");
+				let temp = "";
+				for(i=1;i<=angka;i++){
+					if(i%2 !== 0){
+						temp += i + " ";
+					}
+				}
+				hasil.innerHTML=temp;
+			}function generatePrima(){
+				let angka = Number(document.getElementById("angka").value);
+				let hasil = document.getElementById("hasil");
+				let temp = "";
+				let ket;
+				if(angka>2){
+					for(i=2;i<=angka;i++){
+						for(j=2;j<i;j++){
+							ket = true;
+							if(i%j == 0){
+								ket = false;
+								break;
+							}
+						}
+						if(ket == true || i == 2){
+							temp += i + " ";
+						}
+					}
+				}else{
+					temp = "tidak ada";
+				}
+				hasil.innerHTML=temp;
+			}
+        </script>
+    </body>
+</html>
